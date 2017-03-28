@@ -1,0 +1,11 @@
+{
+  "project": "bsh",
+  "sftp": {
+    "host": "54.223.201.156",
+    "user": "ec2-user",
+    "port": "22",
+    "key": "",
+    "pass": "BjLWi1T0247FBFx6",
+    "remotePath": "/home/ec2-user/demo"
+  }
+}

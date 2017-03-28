@@ -1,0 +1,65 @@
+<div class="add-container" ng-if="step==2">
+    <div class="title">确认添加设备</div>
+    <div class="step-info">
+        <img class="step-img" ng-src="{{deviceInfo.bindImageUri}}"/>
+    </div>
+    <div class="info">
+        <div class="des">{{deviceInfo.typeName}}</div>
+        <div class="step-sure">以上是您扫描的设备,确认添加?</div>
+        <div class="confirm-button">
+            <div>
+                <div class="sure" ng-click="next()">确认</div>
+                <div class="cancel" ng-click="cancel()">取消</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="add-container" ng-if="step==3">
+    <div class="title">确认添加设备</div>
+    <div class="step-info">
+        <img class="step-img" ng-src="{{deviceInfo.bindImageUri}}"/>
+    </div>
+    <div class="info">
+        <div class="des">{{deviceInfo.typeName}}</div>
+        <div class="step-sure">请绑定该设备所属厂商的账号:</div>
+        <form name="form" novalidate>
+            <div class="form">
+                <input type="input" ng-model="user.userName" name="userName" placeholder="请输入账号"
+                       required="">
+                <!--<div ng-show="form.$submitted || form.userName.$touched">-->
+                <!--<div class="error" ng-show="form.userName.$error.required">账号不能为空</div>-->
+                <!--</div>-->
+                <input type="password" ng-model="user.password" name="password" placeholder="请输入密码"
+                       required="">
+                <!--<div ng-show="form.$submitted || form.password.$touched">-->
+                <!--<div class="error" ng-show="form.password.$error.required">密码不能为空</div>-->
+                <!--</div>-->
+            </div>
+            <div class="confirm-button">
+                <div>
+                    <div ng-class="{'pre-sure':user.userName==undefined||user.userName==''||user.password==undefined||user.password==''}"
+                         class="sure" type="submit"
+                         ng-click="update(user)">提交
+                    </div>
+                    <div class="cancel" ng-click="cancel()">取消</div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div class="modal" ng-show="modal">
+    <div class="mbox">
+        <div class="mtitle">
+            <!--<img src="images/fail.png">&nbsp;&nbsp;-->
+            <span>{{errTitle}}</span>
+        </div>
+        <div class="mbody">{{errMsg}}</div>
+        <div class="mbottom">
+            <div ng-click="hide()">知道了
+            </div>
+        </div>
+    </div>
+</div>
+

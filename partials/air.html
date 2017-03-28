@@ -1,0 +1,71 @@
+<div class="container">
+    <div class="banner">
+        <img ng-click="back()" class="back" src="images/back.png">
+        <span>{{deviceName}}</span>
+        <div class="banner-switch">
+            <span>关</span>
+            <img ng-show="!air.onOffStatus" ng-click="op('onOffStatus',true)" src="images/switch-off.png">
+            <img ng-show="air.onOffStatus" ng-click="op('onOffStatus',false)" src="images/switch-on.png">
+            <span>开</span>
+        </div>
+    </div>
+    <img class="air-img" ng-src="{{deviceImage}}"/>
+    <div class="control">
+        <div class="control-row"><span class="control-attribute">当前室温</span>
+            <div class="control-component">
+                <div class="control-value">
+                    <span>{{air.indoorTemperature}}℃</span>
+                </div>
+            </div>
+        </div>
+        <div class="control-row"><span class="control-attribute">功能模式</span>
+            <div class="control-component"><img src="images/left.png" ng-click="op('operationMode',0)"/>
+                <div class="control-value">
+                    <span ng-if="air.operationMode==0">自动</span>
+                    <span ng-if="air.operationMode==1">制冷</span>
+                    <span ng-if="air.operationMode==2">除湿</span>
+                    <span ng-if="air.operationMode==4">制热</span>
+                    <span ng-if="air.operationMode==6">送风</span>
+                </div>
+                <img src="images/right.png" ng-click="op('operationMode',1)"/>
+            </div>
+        </div>
+        <div class="control-row"><span class="control-attribute">温度设置</span>
+            <div class="control-component"><img src="images/left.png" ng-click="op('targetTemperature',0)"/>
+                <div class="control-value">
+                    <span>{{air.targetTemperature}}℃</span>
+                </div>
+                <img src="images/right.png" ng-click="op('targetTemperature',1)"/>
+            </div>
+        </div>
+        <div class="control-row"><span class="control-attribute">风速设置</span>
+            <div class="control-component"><img src="images/left.png" ng-click="op('windSpeed',0)"/>
+                <div class="control-value">
+                    <span ng-if="air.windSpeed==1">高风</span>
+                    <span ng-if="air.windSpeed==2">中风</span>
+                    <span ng-if="air.windSpeed==3">低风</span>
+                    <span ng-if="air.windSpeed==5">自动风</span>
+                </div>
+                <img src="images/right.png" ng-click="op('windSpeed',1)"/>
+            </div>
+        </div>
+        <div class="control-row"><span class="control-attribute">上下摆风</span>
+            <div class="control-component"><img src="images/left.png" ng-click="op('windDirectionVertical',0)"/>
+                <div class="control-value">
+                    <span ng-if="air.windDirectionVertical==8">自动</span>
+                    <span ng-if="air.windDirectionVertical!=8">固定</span>
+                </div>
+                <img src="images/right.png" ng-click="op('windDirectionVertical',1)"/>
+            </div>
+        </div>
+        <div class="control-row"><span class="control-attribute">左右摆风</span>
+            <div class="control-component"><img src="images/left.png" ng-click="op('windDirectionHorizontal',0)"/>
+                <div class="control-value">
+                    <span ng-if="air.windDirectionHorizontal==7">自动</span>
+                    <span ng-if="air.windDirectionHorizontal!=7">固定</span>
+                </div>
+                <img src="images/right.png" ng-click="op('windDirectionHorizontal',1)"/>
+            </div>
+        </div>
+    </div>
+</div>

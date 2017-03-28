@@ -1,0 +1,25 @@
+{
+  "flag": true,
+  "msg": "请求成功",
+  "data": {
+    "DeviceAttr": {
+      "bwmode": 5,
+      "ldswitch": 0,
+      "lcswitch": 0,
+      "refrigeratorTargetTemperature": "6",
+      "highmoisturemode": 0,
+      "ybwswitch": 0,
+      "lightmode": 0,
+      "quickCoolingMode": "False",
+      "zbwswitch": 0,
+      "freezerTargetTemperature": "-21",
+      "radarmode": 0,
+      "smartmode": 0,
+      "powersavingmode": 0,
+      "holidaymode": 0,
+      "quickFreezingMode": "False",
+      "ybwtemperature": -19,
+      "zbwtemperature": 2
+    }
+  }
+}

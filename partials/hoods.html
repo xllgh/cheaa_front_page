@@ -1,0 +1,36 @@
+<div class="container">
+    <div class="banner">
+        <img ng-click="back()" class="back" src="images/back.png">
+        <span>{{deviceName}}</span>
+        <div class="banner-switch">
+            <span>关</span>
+            <img ng-show="!hoods.onOffStatus" ng-click="op('onOffStatus',1)" src="images/switch-off.png">
+            <img ng-show="hoods.onOffStatus" ng-click="op('onOffStatus',0)" src="images/switch-on.png">
+            <span>开</span>
+        </div>
+    </div>
+    <img class="hoods-img" ng-src="{{deviceImage}}"/>
+    <div class="control">
+        <div class="control-row"><span class="control-attribute">照明</span>
+            <div class="control-component"><img src="images/left.png" ng-click="op('lightLevel',0)"/>
+                <div class="control-value">
+                    <span ng-if="hoods.lightLevel==0">关</span>
+                    <span ng-if="hoods.lightLevel==1">弱亮</span>
+                    <span ng-if="hoods.lightLevel==2">中亮</span>
+                    <span ng-if="hoods.lightLevel==3">高亮</span>
+                </div>
+                <img src="images/right.png" ng-click="op('lightLevel',1)"/>
+            </div>
+        </div>
+        <div class="control-row"><span class="control-attribute">风速</span>
+            <div class="control-component"><img src="images/left.png" ng-click="op('windLevel',0)"/>
+                <div class="control-value">
+                    <span ng-if="hoods.windLevel==0">关</span>
+                    <span ng-if="hoods.windLevel==1">柔速</span>
+                    <span ng-if="hoods.windLevel==2">低速</span>
+                    <span ng-if="hoods.windLevel==3">高速</span>
+                </div>
+                <img src="images/right.png" ng-click="op('windLevel',1)"/></div>
+        </div>
+    </div>
+</div>

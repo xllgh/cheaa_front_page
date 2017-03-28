@@ -1,0 +1,71 @@
+<div class="container">
+    <div class="banner">
+        <img ng-click="back()" class="back" src="images/back.png">
+        <span>{{deviceName}}</span>
+    </div>
+    <img class="fridge-img" ng-src="{{deviceImage}}"/>
+    <div class="control">
+        <div ng-if="platId!='000008'">
+            <div class="control-row"><span class="control-attribute">冷藏室实际温度</span>
+                <div class="control-component">
+                    <div class="control-value">
+                        <span>{{fridge.refrigeratorTemperature}}℃</span>
+                    </div>
+                </div>
+            </div>
+            <div class="control-row"><span class="control-attribute">冷冻室实际温度</span>
+                <div class="control-component">
+                    <div class="control-value">
+                        <span>{{fridge.freezerTemperature}}℃</span>
+                    </div>
+                </div>
+            </div>
+            <div class="control-row"><span class="control-attribute">冰箱门状态</span>
+                <div class="control-component">
+                    <div class="control-value">
+                        <span ng-if="fridge.quickCoolingMode">开启</span>
+                        <span ng-if="!fridge.quickCoolingMode">关闭</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div ng-if="platId!='000007'">
+            <div class="control-row"><span class="control-attribute">速冷模式</span>
+                <div class="control-component">
+                    <div class="control-value">
+                        <img ng-show="!fridge.quickCoolingMode" ng-click="op('quickCoolingMode',1)"
+                             src="images/switch-off.png">
+                        <img ng-show="fridge.quickCoolingMode" ng-click="op('quickCoolingMode',0)"
+                             src="images/switch-on.png">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="control-row"><span class="control-attribute">速冻模式</span>
+            <div class="control-component">
+                <div class="control-value">
+                    <img ng-show="!fridge.quickFreezingMode" ng-click="op('quickFreezingMode',1)"
+                         src="images/switch-off.png">
+                    <img ng-show="fridge.quickFreezingMode" ng-click="op('quickFreezingMode',0)"
+                         src="images/switch-on.png">
+                </div>
+            </div>
+        </div>
+        <div class="control-row"><span class="control-attribute">冷冻室温度</span>
+            <div class="control-component"><img src="images/left.png" ng-click="op('freezerTargetTemperature',0)"/>
+                <div class="control-value">
+                    <span>{{fridge.freezerTargetTemperature}}℃</span>
+                </div>
+                <img src="images/right.png" ng-click="op('freezerTargetTemperature',1)"/>
+            </div>
+        </div>
+        <div class="control-row"><span class="control-attribute">冷藏室温度</span>
+            <div class="control-component"><img src="images/left.png" ng-click="op('refrigeratorTargetTemperature',0)"/>
+                <div class="control-value">
+                    <span>{{fridge.refrigeratorTargetTemperature}}℃</span>
+                </div>
+                <img src="images/right.png" ng-click="op('refrigeratorTargetTemperature',1)"/>
+            </div>
+        </div>
+    </div>
+</div>

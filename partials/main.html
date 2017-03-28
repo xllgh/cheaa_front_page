@@ -1,0 +1,46 @@
+<div class="empty-device" ng-if="devices.length==0">
+    <img src="images/none.png">
+    <p>目前列表里还没有内容<br>
+        赶紧去添加设备吧!</p>
+    <div class="list-bottom">
+        <div class="add-device" ng-click="add()"><span>+</span>&nbsp;&nbsp; 添加设备</div>
+    </div>
+</div>
+<div class="device-container" ng-if="devices.length!=0">
+    <div class="margin-div">
+        <div class="device" ng-click="control(device)"
+             ng-repeat="device in devices">
+            <img ng-src="{{device.listImageUri}}">
+            <div class="device-title">
+                <span>{{device.name}}</span>
+                <img src="images/fridge-icon.png" ng-show="device.deviceType=='010103'"/>
+                <img src="images/hoods-icon.png" ng-show="device.deviceType=='010404'"/>
+                <img src="images/air-icon.png" ng-show="device.deviceType=='03001012'"/>
+            </div>
+        </div>
+    </div>
+    <div class="list-bottom">
+        <div class="del" ng-click="delete(device);$event.stopPropagation();"><img class="del-img" src="images/del.png"/>
+        </div>
+        <div class="add-device" ng-click="add()"><span>+</span>&nbsp;&nbsp; 添加设备</div>
+    </div>
+</div>
+<div class="modal" ng-show="showDel">
+    <div class="box">
+        <div class="modal-title"><span>确认删除设备?</span></div>
+        <div class="modal-body">
+            <div class="del-dsc">请选择要删除的设备:</div>
+            <div class="del-device-list">
+                <div ng-class="{'del-select':device.deviceId==waittingDel.deviceId}" ng-click="select(device);"
+                     class="del-device"
+                     ng-repeat="device in devices">
+                    <span>{{device.name}}</span>
+                </div>
+            </div>
+        </div>
+        <div class="modal-bottom">
+            <div class="del-cancle" ng-click="cancel()">取消</div>
+            <div ng-click="comfirmDel()">删除</div>
+        </div>
+    </div>
+</div>

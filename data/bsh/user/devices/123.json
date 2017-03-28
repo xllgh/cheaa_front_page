@@ -1,0 +1,27 @@
+{
+  "flag": true,
+  "msg": "成功",
+  "data": [
+    {
+      "DeviceAttrs": "{}",
+      "deviceId": "86100c009002005000000101959525e21ur02000nljk00h4jj10811",
+      "name": "油烟机",
+      "mac": "01959525e1",
+      "deviceType": "010404"
+    },
+    {
+      "DeviceAttrs": "{}",
+      "deviceId": "86100c009002002000000101959525a31b026000601j00h4gp10813",
+      "name": "冰箱",
+      "mac": "01959525a0",
+      "deviceType": "010103"
+    },
+    {
+      "deviceAttrs": "{}",
+      "deviceId": "0007A8B4F71B",
+      "name": "测试空调",
+      "mac": "***",
+      "deviceType": "03001012"
+    }
+  ]
+}

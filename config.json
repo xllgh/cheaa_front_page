@@ -1,0 +1,12 @@
+{
+  "dev": {
+    "serviceBaseUrl": "http://127.0.0.1:8001"
+  },
+  "qa": {
+    "serviceBaseUrl": "http://116.62.4.120:8081/api"
+  },
+  "prod": {
+    "serviceBaseUrl": "http://54.223.201.156/api"
+  }
+}
+
